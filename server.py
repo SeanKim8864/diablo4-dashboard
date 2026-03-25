@@ -44,19 +44,19 @@ def sentiment_score(label: str) -> int:
 
 
 LANG_COUNTRY = {
-    "english": "US/UK/EN", "en": "US/UK/EN",
-    "korean": "Korea", "ko": "Korea",
-    "german": "Germany", "de": "Germany",
-    "french": "France", "fr": "France",
-    "spanish": "Spain/LATAM", "es": "Spain/LATAM",
-    "japanese": "Japan", "ja": "Japan",
-    "russian": "Russia", "ru": "Russia",
-    "chinese": "China", "zh": "China",
-    "portuguese": "Brazil/Portugal", "pt": "Brazil/Portugal",
-    "italian": "Italy", "it": "Italy",
-    "turkish": "Turkey", "tr": "Turkey",
-    "polish": "Poland", "pl": "Poland",
-    "thai": "Thailand", "th": "Thailand",
+    "english": "미국/영국/영어권", "en": "미국/영국/영어권",
+    "korean": "대한민국", "ko": "대한민국",
+    "german": "독일", "de": "독일",
+    "french": "프랑스", "fr": "프랑스",
+    "spanish": "스페인/중남미", "es": "스페인/중남미",
+    "japanese": "일본", "ja": "일본",
+    "russian": "러시아", "ru": "러시아",
+    "chinese": "중국", "zh": "중국",
+    "portuguese": "브라질/포르투갈", "pt": "브라질/포르투갈",
+    "italian": "이탈리아", "it": "이탈리아",
+    "turkish": "튀르키예", "tr": "튀르키예",
+    "polish": "폴란드", "pl": "폴란드",
+    "thai": "태국", "th": "태국",
 }
 
 
@@ -65,35 +65,35 @@ def estimate_country(row):
     if pd.notna(c) and str(c).strip():
         return str(c).strip()
     lang = str(row.get("language", "")).lower()
-    return LANG_COUNTRY.get(lang, "Unknown")
+    return LANG_COUNTRY.get(lang, "미상")
 
 
 def playtime_bucket(hours):
     if pd.isna(hours):
-        return "Unknown"
+        return "미상"
     if hours < 10:
-        return "<10h"
+        return "10시간 미만"
     if hours < 50:
-        return "10-50h"
+        return "10~50시간"
     if hours < 100:
-        return "50-100h"
+        return "50~100시간"
     if hours < 300:
-        return "100-300h"
-    return "300h+"
+        return "100~300시간"
+    return "300시간 이상"
 
 
 TOPIC_KR = {
-    "general": "General",
-    "loot": "Loot",
-    "balance": "Balance",
-    "season content": "Season",
-    "progression": "Progression",
-    "build diversity": "Builds",
-    "bugs": "Bugs",
-    "performance": "Performance",
-    "rewards": "Rewards",
-    "endgame": "Endgame",
-    "monetization": "Monetization",
+    "general": "일반 의견",
+    "loot": "전리품",
+    "balance": "밸런스",
+    "season content": "시즌 콘텐츠",
+    "progression": "성장",
+    "build diversity": "빌드 다양성",
+    "bugs": "버그",
+    "performance": "성능",
+    "rewards": "보상",
+    "endgame": "엔드게임",
+    "monetization": "과금",
 }
 
 
@@ -242,7 +242,7 @@ def dashboard_data():
     # Playtime satisfaction
     playtime = []
     if not steam_f.empty and "playtime_bucket" in steam_f.columns:
-        order = ["<10h", "10-50h", "50-100h", "100-300h", "300h+"]
+        order = ["10시간 미만", "10~50시간", "50~100시간", "100~300시간", "300시간 이상"]
         for bucket, grp in steam_f.groupby("playtime_bucket"):
             n = len(grp)
             p = int((grp["sentiment"] == "positive").sum())

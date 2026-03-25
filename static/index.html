@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diablo IV — Sanctuary Console</title>
+<title>디아블로 IV — 성소 콘솔</title>
 
-<!-- Fonts -->
+<!-- Fonts: Gasoek One (제목), Hahmlet (서브), Noto Serif KR (본문) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Hahmlet:wght@400;600;700;900&family=Noto+Serif+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 
 <style>
 /* ============================================================
-   SANCTUARY CONSOLE — Dark Gothic Executive Dashboard
+   성소 콘솔 — Dark Gothic Executive Dashboard
    ============================================================ */
 
 :root {
@@ -37,6 +37,9 @@
   --text-muted:  #6b6878;
   --text-dim:    #3d3a47;
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  --font-display: 'Gasoek One', 'Black Han Sans', sans-serif;
+  --font-sub:     'Hahmlet', serif;
+  --font-body:    'Noto Serif KR', '나눔명조', serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,9 +47,9 @@
 body {
   background: var(--bg-abyss);
   color: var(--text);
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: var(--font-body);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -91,41 +94,40 @@ body::after {
 }
 
 .header__eyebrow {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
+  font-family: var(--font-sub);
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.35em;
-  text-transform: uppercase;
   color: var(--red);
   margin-bottom: 8px;
 }
 
 .header__title {
-  font-family: 'Cinzel', serif;
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   color: var(--text);
   text-shadow: 0 0 40px rgba(196,30,58,0.2);
 }
 
 .header__sub {
+  font-family: var(--font-body);
   font-size: 14px;
   color: var(--text-muted);
-  margin-top: 6px;
-  font-style: italic;
+  margin-top: 8px;
   font-weight: 300;
 }
 
 .header__period {
   display: inline-block;
-  margin-top: 12px;
-  padding: 5px 18px;
+  margin-top: 14px;
+  padding: 6px 20px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sub);
+  font-size: 12px;
+  letter-spacing: 0.1em;
   color: var(--gold);
   background: var(--bg-card);
 }
@@ -175,19 +177,18 @@ body::after {
 .kpi:hover::before { opacity: 1; }
 
 .kpi__label {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-family: var(--font-sub);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  letter-spacing: 0.15em;
   color: var(--text-muted);
   margin-bottom: 10px;
 }
 
 .kpi__value {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-display);
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text);
   line-height: 1.1;
 }
@@ -197,9 +198,11 @@ body::after {
 .kpi__value--gold { color: var(--gold); }
 
 .kpi__delta {
+  font-family: var(--font-body);
   font-size: 12px;
   color: var(--text-muted);
   margin-top: 4px;
+  font-weight: 300;
 }
 
 /* ---- Section cards ---- */
@@ -236,17 +239,16 @@ body::after {
 }
 
 .card__eyebrow {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-family: var(--font-sub);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0.2em;
   color: var(--red);
   margin-bottom: 6px;
 }
 
 .card__title {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-sub);
   font-size: 16px;
   font-weight: 700;
   color: var(--text);
@@ -260,11 +262,10 @@ body::after {
 }
 
 .topic-table th {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-family: var(--font-sub);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
   text-align: left;
   padding: 10px 12px;
@@ -272,6 +273,7 @@ body::after {
 }
 
 .topic-table td {
+  font-family: var(--font-body);
   font-size: 13px;
   padding: 10px 12px;
   border-bottom: 1px solid rgba(26,26,46,0.6);
@@ -289,7 +291,7 @@ body::after {
   border-radius: 10px;
   font-size: 11px;
   font-weight: 600;
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-sub);
   letter-spacing: 0.05em;
 }
 
@@ -349,12 +351,12 @@ body::after {
 }
 
 .methodology h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 14px;
+  font-family: var(--font-sub);
+  font-size: 15px;
   font-weight: 700;
   color: var(--gold);
   margin-bottom: 12px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .methodology ul {
@@ -383,10 +385,10 @@ body::after {
 .footer {
   text-align: center;
   margin-top: 48px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-dim);
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sub);
+  letter-spacing: 0.1em;
 }
 
 /* ---- Animations ---- */
@@ -424,7 +426,7 @@ body::after {
   .dashboard { padding: 20px 16px 40px; }
   .kpi-row { grid-template-columns: repeat(2, 1fr); }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .header__title { font-size: 22px; }
+  .header__title { font-size: 26px; }
   .kpi__value { font-size: 22px; }
 }
 
@@ -452,11 +454,10 @@ body::after {
 }
 
 .loading__text {
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  letter-spacing: 0.3em;
+  font-family: var(--font-sub);
+  font-size: 13px;
+  letter-spacing: 0.2em;
   color: var(--text-muted);
-  text-transform: uppercase;
 }
 </style>
 </head>
@@ -465,7 +466,7 @@ body::after {
 <div class="dashboard" id="app">
   <div class="loading" id="loading">
     <div class="loading__spinner"></div>
-    <div class="loading__text">Entering Sanctuary</div>
+    <div class="loading__text">성소에 진입하는 중…</div>
   </div>
 </div>
 
@@ -475,15 +476,15 @@ body::after {
 // ============================================================
 Chart.defaults.color = '#6b6878';
 Chart.defaults.borderColor = 'rgba(26,26,46,0.5)';
-Chart.defaults.font.family = "'Crimson Pro', Georgia, serif";
+Chart.defaults.font.family = "'Noto Serif KR', serif";
 Chart.defaults.font.size = 12;
 Chart.defaults.plugins.legend.labels.usePointStyle = true;
 Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
 Chart.defaults.plugins.tooltip.backgroundColor = '#0f0f1a';
 Chart.defaults.plugins.tooltip.borderColor = '#1a1a2e';
 Chart.defaults.plugins.tooltip.borderWidth = 1;
-Chart.defaults.plugins.tooltip.titleFont = { family: "'Cinzel', serif", size: 11, weight: '600' };
-Chart.defaults.plugins.tooltip.bodyFont = { family: "'Crimson Pro', serif", size: 13 };
+Chart.defaults.plugins.tooltip.titleFont = { family: "'Hahmlet', serif", size: 12, weight: '600' };
+Chart.defaults.plugins.tooltip.bodyFont = { family: "'Noto Serif KR', serif", size: 13 };
 Chart.defaults.plugins.tooltip.padding = 12;
 Chart.defaults.plugins.tooltip.cornerRadius = 10;
 
@@ -510,9 +511,9 @@ function render(data) {
   app.innerHTML = `
     <!-- Header -->
     <header class="header">
-      <div class="header__eyebrow">Executive Intelligence</div>
-      <h1 class="header__title">DIABLO IV</h1>
-      <p class="header__sub">Steam &amp; Reddit sentiment analysis — public data only</p>
+      <div class="header__eyebrow">경영진 인텔리전스</div>
+      <h1 class="header__title">디아블로 IV</h1>
+      <p class="header__sub">Steam · Reddit 공개 데이터 기반 감성 분석 대시보드</p>
       <span class="header__period">${s.period}</span>
     </header>
 
@@ -521,42 +522,42 @@ function render(data) {
     <!-- KPIs -->
     <div class="kpi-row">
       <div class="kpi">
-        <div class="kpi__label">Total Mentions</div>
+        <div class="kpi__label">전체 언급량</div>
         <div class="kpi__value">${s.total.toLocaleString()}</div>
-        <div class="kpi__delta">Steam + Reddit combined</div>
+        <div class="kpi__delta">Steam + Reddit 통합</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Satisfaction</div>
+        <div class="kpi__label">긍정 비율</div>
         <div class="kpi__value kpi__value--green">${s.sat_rate}%</div>
-        <div class="kpi__delta">${s.positive} positive of ${s.total}</div>
+        <div class="kpi__delta">${s.total}건 중 ${s.positive}건 긍정</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Negative Rate</div>
+        <div class="kpi__label">부정 비율</div>
         <div class="kpi__value kpi__value--red">${s.neg_rate}%</div>
-        <div class="kpi__delta">${s.negative} negative mentions</div>
+        <div class="kpi__delta">${s.negative}건 부정 언급</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Sentiment Gap</div>
+        <div class="kpi__label">긍부정 격차</div>
         <div class="kpi__value kpi__value--gold">${(s.sat_rate - s.neg_rate).toFixed(1)}%p</div>
-        <div class="kpi__delta">Positive − Negative spread</div>
+        <div class="kpi__delta">긍정 − 부정 차이</div>
       </div>
       <div class="kpi">
-        <div class="kpi__label">Top Issue</div>
+        <div class="kpi__label">핵심 이슈</div>
         <div class="kpi__value" style="font-size:20px">${s.top_issue}</div>
-        <div class="kpi__delta">Most discussed topic</div>
+        <div class="kpi__delta">가장 많이 논의된 토픽</div>
       </div>
     </div>
 
     <!-- Row 1: Volume + Sentiment Trend -->
     <div class="grid-2">
       <div class="card card--d1">
-        <div class="card__eyebrow">Behavior</div>
-        <div class="card__title">14-Day Volume Trend</div>
+        <div class="card__eyebrow">이용 행태</div>
+        <div class="card__title">최근 14일 언급량 추이</div>
         <div class="chart-wrap"><canvas id="chartVolume"></canvas></div>
       </div>
       <div class="card card--d2">
-        <div class="card__eyebrow">Sentiment</div>
-        <div class="card__title">Positive / Negative Flow</div>
+        <div class="card__eyebrow">감성 분석</div>
+        <div class="card__title">긍정 / 부정 비율 추이</div>
         <div class="chart-wrap"><canvas id="chartSentiment"></canvas></div>
       </div>
     </div>
@@ -564,18 +565,18 @@ function render(data) {
     <!-- Row 2: Country + Playtime + Topics -->
     <div class="grid-3">
       <div class="card card--d3">
-        <div class="card__eyebrow">Geography</div>
-        <div class="card__title">Satisfaction by Region</div>
+        <div class="card__eyebrow">지역별</div>
+        <div class="card__title">국가별 만족도</div>
         <div class="chart-wrap"><canvas id="chartCountry"></canvas></div>
       </div>
       <div class="card card--d4">
-        <div class="card__eyebrow">Playtime</div>
-        <div class="card__title">Satisfaction by Hours</div>
+        <div class="card__eyebrow">플레이타임</div>
+        <div class="card__title">플레이시간별 만족도</div>
         <div class="chart-wrap"><canvas id="chartPlaytime"></canvas></div>
       </div>
       <div class="card card--d5">
-        <div class="card__eyebrow">Topics</div>
-        <div class="card__title">Core Keywords</div>
+        <div class="card__eyebrow">토픽</div>
+        <div class="card__title">핵심 키워드 요약</div>
         ${renderTopicTable(data.topics)}
       </div>
     </div>
@@ -583,30 +584,30 @@ function render(data) {
     <!-- Row 3: Topic Detail -->
     <div class="grid-2">
       <div class="card card--d6">
-        <div class="card__eyebrow">Topic Detail</div>
-        <div class="card__title">Frequency &amp; Sentiment</div>
+        <div class="card__eyebrow">토픽 상세</div>
+        <div class="card__title">빈도 및 감성</div>
         <div class="chart-wrap"><canvas id="chartTopicFreq"></canvas></div>
       </div>
       <div class="card card--d6">
-        <div class="card__eyebrow">Engagement</div>
-        <div class="card__title">Avg. Score by Topic</div>
+        <div class="card__eyebrow">참여도</div>
+        <div class="card__title">토픽별 평균 점수</div>
         <div class="chart-wrap"><canvas id="chartTopicEng"></canvas></div>
       </div>
     </div>
 
     <!-- Methodology -->
     <div class="methodology">
-      <h3>Methodology</h3>
+      <h3>분석 방법론</h3>
       <ul>
-        <li>Sentiment classification: positive / neutral / negative (rule-based on review metadata)</li>
-        <li>Country estimation: direct observation or language-signal heuristic where unavailable</li>
-        <li>Topic extraction: pre-labeled topic fields; future: n-gram clustering</li>
-        <li>Steam and Reddit do not fully represent all Diablo IV players</li>
-        <li>Integrated engagement scores are directional references only</li>
+        <li>긍정/부정 분류: 리뷰 메타데이터 기반 규칙 분류 (긍정 / 중립 / 부정)</li>
+        <li>국가 추정: 직접 관측 또는 언어 신호 기반 휴리스틱 추정</li>
+        <li>토픽 추출: 사전 레이블링된 토픽 필드 사용, 향후 n-gram 클러스터링 고도화 예정</li>
+        <li>Steam과 Reddit은 전체 디아블로 IV 이용자를 완전히 대표하지 않습니다</li>
+        <li>통합 참여도 점수는 방향성 참고 지표입니다</li>
       </ul>
     </div>
 
-    <div class="footer">SANCTUARY CONSOLE · Built for insight, forged in darkness</div>
+    <div class="footer">성소 콘솔 · 어둠 속에서 벼려낸 통찰</div>
   `;
 
   // ---- Charts ----
@@ -622,12 +623,12 @@ function render(data) {
 // Topic table renderer
 // ============================================================
 function renderTopicTable(topics) {
-  if (!topics.length) return '<p style="color:var(--text-muted)">No topic data available</p>';
+  if (!topics.length) return '<p style="color:var(--text-muted)">토픽 데이터 없음</p>';
   const rows = topics.map(t => {
     const sentColor = t.sentiment > 0 ? GREEN : t.sentiment < 0 ? RED : GOLD;
     const sentWidth = Math.min(Math.abs(t.sentiment) * 100, 100);
     const trendClass = t.trend === 'rising' ? 'rising' : t.trend === 'falling' ? 'falling' : 'stable';
-    const trendLabel = t.trend === 'rising' ? '▲ Rising' : t.trend === 'falling' ? '▼ Falling' : '— Stable';
+    const trendLabel = t.trend === 'rising' ? '▲ 상승' : t.trend === 'falling' ? '▼ 하락' : '— 유지';
     return `<tr>
       <td style="font-weight:600">${t.topic}</td>
       <td>${t.freq}</td>
@@ -641,7 +642,7 @@ function renderTopicTable(topics) {
 
   return `<div style="max-height:280px;overflow-y:auto">
     <table class="topic-table">
-      <thead><tr><th>Topic</th><th>Freq</th><th>Sentiment</th><th>Trend</th></tr></thead>
+      <thead><tr><th>토픽</th><th>빈도</th><th>감성</th><th>추세</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   </div>`;
@@ -660,7 +661,7 @@ function buildVolumeChart(trend) {
       labels,
       datasets: [
         {
-          label: 'Steam Reviews',
+          label: 'Steam 리뷰 수',
           data: trend.map(t => t.steam),
           borderColor: RED,
           backgroundColor: 'rgba(196,30,58,0.08)',
@@ -671,7 +672,7 @@ function buildVolumeChart(trend) {
           borderWidth: 2,
         },
         {
-          label: 'Reddit Discussions',
+          label: 'Reddit 토론 수',
           data: trend.map(t => t.reddit),
           borderColor: GOLD,
           backgroundColor: 'rgba(212,168,83,0.06)',
@@ -689,7 +690,7 @@ function buildVolumeChart(trend) {
       interaction: { intersect: false, mode: 'index' },
       scales: {
         x: { grid: { color: GRID }, ticks: { maxRotation: 0 } },
-        y: { grid: { color: GRID }, beginAtZero: true },
+        y: { grid: { color: GRID }, beginAtZero: true, title: { display: true, text: '건수', color: MUTED } },
       },
       plugins: { legend: { position: 'top' } },
     },
@@ -706,7 +707,7 @@ function buildSentimentChart(trend) {
       labels,
       datasets: [
         {
-          label: 'Positive %',
+          label: '긍정 비율',
           data: trend.map(t => t.pos_rate),
           borderColor: GREEN,
           backgroundColor: 'rgba(45,212,160,0.08)',
@@ -717,7 +718,7 @@ function buildSentimentChart(trend) {
           borderWidth: 2,
         },
         {
-          label: 'Negative %',
+          label: '부정 비율',
           data: trend.map(t => t.neg_rate),
           borderColor: RED,
           backgroundColor: 'rgba(196,30,58,0.08)',
@@ -735,7 +736,7 @@ function buildSentimentChart(trend) {
       interaction: { intersect: false, mode: 'index' },
       scales: {
         x: { grid: { color: GRID }, ticks: { maxRotation: 0 } },
-        y: { grid: { color: GRID }, beginAtZero: true, ticks: { callback: v => v + '%' } },
+        y: { grid: { color: GRID }, beginAtZero: true, ticks: { callback: v => v + '%' }, title: { display: true, text: '비율', color: MUTED } },
       },
       plugins: { legend: { position: 'top' } },
     },
@@ -751,7 +752,7 @@ function buildCountryChart(countries) {
     data: {
       labels: top.map(c => c.country),
       datasets: [{
-        label: 'Satisfaction %',
+        label: '만족도',
         data: top.map(c => c.rate),
         backgroundColor: top.map(c => c.rate >= 50 ? 'rgba(45,212,160,0.6)' : 'rgba(196,30,58,0.6)'),
         borderColor: top.map(c => c.rate >= 50 ? GREEN : RED),
@@ -772,7 +773,7 @@ function buildCountryChart(countries) {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            afterLabel: (ctx) => `Sample: ${top[ctx.dataIndex].total} · Positive: ${top[ctx.dataIndex].positive}`
+            afterLabel: (ctx) => `표본: ${top[ctx.dataIndex].total}건 · 긍정: ${top[ctx.dataIndex].positive}건`
           }
         }
       },
@@ -788,7 +789,7 @@ function buildPlaytimeChart(playtime) {
     data: {
       labels: playtime.map(p => p.bucket),
       datasets: [{
-        label: 'Satisfaction %',
+        label: '만족도',
         data: playtime.map(p => p.rate),
         backgroundColor: playtime.map(p => {
           const h = p.rate / 100;
@@ -803,13 +804,13 @@ function buildPlaytimeChart(playtime) {
       maintainAspectRatio: false,
       scales: {
         x: { grid: { display: false } },
-        y: { grid: { color: GRID }, max: 100, ticks: { callback: v => v + '%' } },
+        y: { grid: { color: GRID }, max: 100, ticks: { callback: v => v + '%' }, title: { display: true, text: '만족도', color: MUTED } },
       },
       plugins: {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            afterLabel: (ctx) => `Sample: ${playtime[ctx.dataIndex].total}`
+            afterLabel: (ctx) => `표본: ${playtime[ctx.dataIndex].total}건`
           }
         }
       },
@@ -825,7 +826,7 @@ function buildTopicFreqChart(topics) {
     data: {
       labels: topics.map(t => t.topic),
       datasets: [{
-        label: 'Frequency',
+        label: '빈도',
         data: topics.map(t => t.freq),
         backgroundColor: topics.map(t =>
           t.sentiment > 0 ? 'rgba(45,212,160,0.5)' :
@@ -844,13 +845,13 @@ function buildTopicFreqChart(topics) {
       maintainAspectRatio: false,
       scales: {
         x: { grid: { display: false }, ticks: { maxRotation: 45 } },
-        y: { grid: { color: GRID }, beginAtZero: true },
+        y: { grid: { color: GRID }, beginAtZero: true, title: { display: true, text: '빈도', color: MUTED } },
       },
       plugins: {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            afterLabel: (ctx) => `Sentiment: ${topics[ctx.dataIndex].sentiment.toFixed(2)}`
+            afterLabel: (ctx) => `감성: ${topics[ctx.dataIndex].sentiment.toFixed(2)}`
           }
         }
       },
@@ -866,7 +867,7 @@ function buildTopicEngChart(topics) {
     data: {
       labels: topics.map(t => t.topic),
       datasets: [{
-        label: 'Avg. Score',
+        label: '평균 점수',
         data: topics.map(t => t.engagement),
         backgroundColor: 'rgba(74,158,255,0.45)',
         borderColor: BLUE,
@@ -880,7 +881,7 @@ function buildTopicEngChart(topics) {
       maintainAspectRatio: false,
       scales: {
         x: { grid: { display: false }, ticks: { maxRotation: 45 } },
-        y: { grid: { color: GRID }, beginAtZero: true },
+        y: { grid: { color: GRID }, beginAtZero: true, title: { display: true, text: '점수', color: MUTED } },
       },
       plugins: { legend: { display: false } },
     },
