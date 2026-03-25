@@ -1,23 +1,26 @@
-# Diablo IV Trend Dashboard
+# Diablo IV — Sanctuary Console
 
-Executive dashboard for Diablo IV using only public Steam and Reddit data.
+Dark gothic executive dashboard for Diablo IV using only public Steam and Reddit data.
+Built with FastAPI + Chart.js. Zero framework frontend — pure HTML/CSS/JS.
 
 ## Scope
 - Satisfaction rate by major country
 - Last 14 days player behavior metrics
 - Core keywords and trends
 - Satisfaction by playtime
+- Topic frequency, sentiment, and engagement analysis
 
 ## Run
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+uvicorn server:app --reload
 ```
+Open `http://localhost:8000`
 
 ## Render deploy
 This app can be deployed on Render as a Python web service.
 - Build command: `pip install -r requirements.txt`
-- Start command: `streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true`
+- Start command: `uvicorn server:app --host 0.0.0.0 --port $PORT`
 - Included file: `render.yaml`
 
 ## Data files
